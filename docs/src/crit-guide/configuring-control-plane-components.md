@@ -68,13 +68,13 @@ serviceSubnet: "10.154.0.0/16"
 
 ## Configuring a Cloud Provider
 
-A cloud provider can be specified to integrate with the underlying infrastructure provider. This unlocks additional features for the cluster specific to the underlying provider. Note, the specified cloud will most likely require authentication/authorization to access their APIs.
+A cloud provider can be specified to integrate with the underlying infrastructure provider. Note, the specified cloud will most likely require authentication/authorization to access their APIs.
 
-Crit supports both [In-tree and out-of-tree]() cloud providers. 
+Crit supports both [In-tree and out-of-tree](https://kubernetes.io/blog/2019/04/17/the-future-of-cloud-providers-in-kubernetes/#in-tree-out-of-tree-providers) cloud providers. 
 
 ### In-tree Cloud Provider
 
-[In-tree]() cloud providers can be specified with the following: 
+[In-tree](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/providers/providers.go#L21-L27) cloud providers can be specified with the following: 
 
 ```yaml
 apiVersion: crit.sh/v1alpha2
@@ -86,6 +86,7 @@ node:
 
 and for the workers: 
 
+```yaml
 apiVersion: crit.sh/v1alpha2
 kind: WorkerConfiguration
 ...
@@ -95,7 +96,7 @@ node:
 
 ### Out-of-tree Cloud Provider
 
-[Out-of-tree]() cloud providers can be specified with the following: 
+Out-of-tree cloud providers can be specified with the following: 
 
 ```yaml
 apiVersion: crit.sh/v1alpha2
@@ -108,6 +109,7 @@ node:
 
 and for the workers: 
 
+```yaml
 apiVersion: crit.sh/v1alpha2
 kind: WorkerConfiguration
 ...
@@ -116,9 +118,6 @@ node:
     cloudProvider: external
 ```
 
-A manifest specific to cloud environment must then be applied to run the external cloud controller manager. 
-
-It is also important to note that this configuration option
-[cloud controller manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/) with the 
+A manifest specific to cloud environment must then be applied to run the external [cloud controller manager](https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/#examples). 
 
 
