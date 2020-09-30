@@ -11,11 +11,11 @@ crit certs init --cert-dir /etc/kubernetes/pki
 
 ```
 
-### Generating CA and Certs for Etcd
+### Generating Certificates for Etcd
 
-Etcd certificates can be generated using our [e2d](https://github.com/criticalstack/e2d) tool. See [e2d pki](https://github.com/criticalstack/e2d#generating-certificates)
+Etcd certificates can be generated using our [e2d](https://github.com/criticalstack/e2d) tool. See [e2d pki](https://github.com/criticalstack/e2d#generating-certificates).
 
-### Generating Certs and Kubeconfigs for Kubernetes Components 
+### Generating Certificates and Kubeconfigs for Kubernetes Components 
 
 The following certificates and kubeconfigs can be created with crit. See the [`crit up` command](). 
 
@@ -43,12 +43,3 @@ The following certificates and kubeconfigs can be created with crit. See the [`c
 │   └── sa.pub
 └── scheduler.conf
 ```
-
-## Certificate Management
-
-
-## Should be stored out-of-band and made available through secrets management of some kind
-
-https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/
-
-https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
