@@ -23,24 +23,29 @@ front-proxy-client		front-proxy-client		364d	2021-09-29T23:54:17Z
 ```
 
 
-## Renewing Certificates
+## Rotating Certificates
+
+There are several different solutions pertaining to certificate rotation. The appropriate solution greatly depends on an organization's use case. Some things to consider:
+ 
+* Does certificate rotation need to intergrate with an organization's existing certificate infrastructure?
+* Can certificate approval and signing be automated, or does it require a cluster administrator?
+* How often do certificates need to be rotated?
+* How many clusters need to be supported?
 
 
-### Renewing with Crit
+### Rotating with Crit
 
-You can use the `crit certs renew` command to renew certificates. 
+Certificates can be renewed with [`crit certs renew`](/crit-commands/crit-certs-renew.md). Note, this does not renew the CA.  
 
-```sh
-$ crit certs renew
-```
+### Rotating with the Kubernetes certificates API
 
-### Renewing  with the Kubernetes certificates API
-https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
-https://kubernetes.io/docs/tasks/tls/manual-rotation-of-ca-certificates/
-https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/
-https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
+Kubernetes provides a [Certificate API](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/) that can be used to provision certificates using [certificate signing requests](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/). 
 
-## Recommendations
+#### Kubelet Certificate
 
-Should be stored out-of-band and made available through secrets management of some kind
+The kubelet certificate [can be automatically renewed](https://kubernetes.io/docs/tasks/tls/certificate-rotation/) using the kubernetes api.
+
+#### Advanced Certificate Rotation
+
+Organizations that require an automated certificate rotation solution that integrates with existing certificate infrastructure should consider projects like [cert-manager](https://cert-manager.io/docs/installation/kubernetes/). 
 
