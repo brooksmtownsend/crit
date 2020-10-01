@@ -39,5 +39,6 @@ Please note, installing from a GH release will not automatically install the [sy
 ```sh
 curl -sLO https://raw.githubusercontent.com/criticalstack/crit/master/build/package/20-crit.conf
 mv 20-crit.conf /etc/systemd/system/kubelet.service.d/
+systemctl daemon-reload
 ```
 
