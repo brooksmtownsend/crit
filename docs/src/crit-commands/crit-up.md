@@ -27,5 +27,6 @@ crit up [flags]
 
 ### SEE ALSO
 
+* [Running crit up](/crit-guide/running-crit-up.md)	 - bootstrap Critical Stack clusters
 * [crit](crit.md)	 - bootstrap Critical Stack clusters
 

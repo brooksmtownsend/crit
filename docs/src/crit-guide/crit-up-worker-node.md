@@ -1,5 +1,5 @@
 Running `crit up` with a [worker configuration](bootstrapping-a-worker.md
-) perfroms the following steps:
+) perfoms the following steps:
  
 | Step      | Description 
 | ----------- | ----------- 

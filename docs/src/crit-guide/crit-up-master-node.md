@@ -1,6 +1,6 @@
 
 Running `crit up` with a [control plane configuration](configuring-control-plane-components.md
-) perfroms the following steps:
+) perfoms the following steps:
 
 | Step      | Description 
 | ----------- | ------------------------------------------------------------------------------------ 
