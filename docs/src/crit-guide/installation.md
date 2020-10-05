@@ -29,7 +29,7 @@ dnf install -y criticalstack e2d
 Download a binary release from [https://github.com/criticalstack/crit/releases/latest](https://github.com/criticalstack/crit/releases/latest) suitable for your system and then install, for example:
 
 ```sh
-curl -sLO https://github.com/criticalstack/crit/releases/download/v0.2.9/crit_0.2.9_Linux_x86_64.tar.gz
+curl -sLO https://github.com/criticalstack/crit/releases/download/v1.0.1/crit_1.0.1_Linux_x86_64.tar.gz
 tar xzf crit_0.2.9_Linux_x86_64.tar.gz
 mv crit /usr/local/bin/
 ```
